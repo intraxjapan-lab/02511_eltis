@@ -373,20 +373,23 @@ export default function Home() {
                 個別指導が必要な方には有料の「ELTiSコース」でマンツーマン対策
               </li>
             </ul>
-            <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50/60 p-6">
+            <div className="relative overflow-hidden rounded-2xl border border-emerald-100 bg-emerald-50">
               <Image
-                src="/window.svg"
-                alt="オンライン講座イメージ"
-                width={160}
-                height={160}
-                className="mx-auto h-32 w-32 object-contain"
+                src="/eltis-prep-illustration.svg"
+                alt="ELTiS対策の学習イラスト"
+                width={640}
+                height={480}
+                className="h-full w-full object-cover"
+                priority
               />
-              <p className="mt-4 text-center text-sm font-semibold text-emerald-800">
-                Vocabulary + Listening + Pronunciation
-              </p>
-              <p className="mt-2 text-center text-xs uppercase tracking-[0.4em] text-emerald-600">
-                Online Support
-              </p>
+              <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-white/90 p-4 shadow-lg shadow-emerald-100">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-emerald-500">
+                  PRACTICE SET
+                </p>
+                <p className="text-sm text-emerald-900">
+                  Vocabulary / Listening / Pronunciation を横断的に強化
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -486,17 +489,41 @@ export default function Home() {
               受験はアユサ日本事務局またはオンラインで
             </h2>
           </div>
-          <div className="rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm">
-            <p className="text-zinc-700">
-              アユサは ELTiS オンライン実施団体として認可を受けています。
-              東京のアユサ日本事務局またはオンライン環境のどちらでも受験可能で、
-              希望日時に合わせて個別にスケジュールを調整します。アユサに未登録の一般の方も
-              お申し込みいただけます。
-            </p>
-            <p className="mt-4 text-zinc-700">
-              テスト予約は以下のフォームから受け付けています。オンライン受験の詳細は
-              お問い合わせください。
-            </p>
+          <div className="grid gap-8 rounded-3xl border border-zinc-100 bg-white p-8 shadow-sm shadow-zinc-100 lg:grid-cols-[1.2fr,0.8fr]">
+            <div>
+              <p className="text-zinc-700">
+                アユサは ELTiS オンライン実施団体として認可を受けています。
+                東京のアユサ日本事務局またはオンライン環境のどちらでも受験可能で、
+                希望日時に合わせて個別にスケジュールを調整します。アユサに未登録の一般の方も
+                お申し込みいただけます。
+              </p>
+              <p className="mt-4 text-zinc-700">
+                テスト予約は以下のフォームから受け付けています。オンライン受験の詳細は
+                お問い合わせください。
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3 text-sm text-zinc-500">
+                <span className="rounded-full bg-zinc-100 px-4 py-1">個別スケジュール調整</span>
+                <span className="rounded-full bg-zinc-100 px-4 py-1">会場・オンライン選択可</span>
+                <span className="rounded-full bg-zinc-100 px-4 py-1">一般の方も受験可能</span>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-2xl bg-sky-50">
+              <Image
+                src="/eltis-application-illustration.svg"
+                alt="ELTiSオンライン受験のイメージ"
+                width={640}
+                height={420}
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-white/90 p-4 shadow-lg shadow-sky-100">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-sky-500">
+                  APPLICATION SUPPORT
+                </p>
+                <p className="text-sm text-sky-900">
+                  接続テストから当日の流れまで、コーディネーターが伴走します。
+                </p>
+              </div>
+            </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="flex flex-col gap-4 rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm">

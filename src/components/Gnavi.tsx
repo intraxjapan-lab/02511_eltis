@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -12,8 +13,15 @@ export function Gnavi() {
   return (
     <header className="sticky top-0 z-50 border-b border-zinc-100 bg-white/95 shadow-sm shadow-zinc-100 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4 text-sm">
-        <Link href="/" className="font-semibold uppercase tracking-[0.2em]">
-          AYUSA Exchange
+        <Link href="/" className="flex items-center" aria-label="Ayusa home">
+          <Image
+            src="/Ayusa_Logo.png"
+            alt="Ayusa International logo"
+            width={150}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
         <nav className="flex flex-1 flex-wrap items-center gap-4 text-zinc-600 md:justify-center">
           {links.map((link) => (
