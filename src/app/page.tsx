@@ -1,6 +1,122 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const currentYear = new Date().getFullYear();
+const years = Array.from({ length: 30 }, (_, idx) => currentYear - idx);
+const months = Array.from({ length: 12 }, (_, idx) => idx + 1);
+const days = Array.from({ length: 31 }, (_, idx) => idx + 1);
+
+const logistics = [
+  {
+    label: "日程",
+    value: "2026年8月17日（月）〜8月19日（水）",
+    detail: "3日間 集中講座",
+  },
+  {
+    label: "対象",
+    value: "中高生（募集35名：先着順）",
+    detail: "2027年アユサ高校交換留学登録者は割引あり",
+  },
+  {
+    label: "会場",
+    value: "国立オリンピック記念青少年総合センター",
+    detail: "東京都渋谷区・代々木公園エリア",
+  },
+  {
+    label: "受講料金",
+    value: "35,000円（税別）",
+    detail: "授業・教材・模擬試験を含む",
+  },
+];
+
+const skillHighlights = [
+  "ELTiSの出題形式と戦略を徹底理解",
+  "Listening・Readingスキルを実践的に強化",
+  "本番さながらの模擬トレーニングで自信アップ",
+  "外国人講師によるオールイングリッシュ授業",
+];
+
+const schedulePlan = [
+  {
+    day: "Day 1",
+    title: "Listening Comprehension",
+    description: "テスト構成の理解と聴解スキル向上にフォーカス",
+    items: [
+      "ELTiS Listeningの出題形式と攻略法を分析",
+      "要点・詳細・推測問題の聞き取り方をトレーニング",
+      "模擬リスニングテストと振り返り",
+    ],
+  },
+  {
+    day: "Day 2",
+    title: "Reading Comprehension",
+    description: "語彙力・速読力・推論力を磨き、文章理解を強化",
+    items: [
+      "スキミング／スキャニング・語彙力強化ワーク",
+      "分野別テキスト（理科・社会・言語）で演習",
+      "模擬リーディングテストとレビュー",
+    ],
+  },
+  {
+    day: "Day 3",
+    title: "Test Simulation & Strategy",
+    description: "総合模擬試験で仕上げ、弱点克服プランを作成",
+    items: [
+      "Listening＋Readingの総合模擬試験",
+      "個別フィードバックと改善ポイントの明確化",
+      "TOEFLなど次のステップにつながる学習ロードマップ",
+    ],
+  },
+];
+
+const heroBadges = [
+  "経験豊富な外国人講師",
+  "全授業英語・少人数制",
+  "留学準備の第一歩",
+];
+
+const sampleImages = [
+  {
+    src: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=80",
+    title: "リスニング指示のサンプル",
+    caption: "教室での指示や数学的説明を英語で理解し、正しく行動する練習を行います。",
+    tag: "Listening Drill",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=900&q=80",
+    title: "リーディング教材イメージ",
+    caption: "理科・社会・言語など複数分野の英文を通じて読解力と語彙力を強化します。",
+    tag: "Reading Lab",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80",
+    title: "オンライン受験のサポート",
+    caption: "自宅受験に向けた接続テストや当日の手順をコーディネーターがサポートします。",
+    tag: "Online Support",
+  },
+];
+
+const journeySteps = [
+  {
+    step: "STEP 01",
+    title: "カウンセリング＆目標設定",
+    body: "現在の英語力と志望校を確認し、集中講座後の学習プランまで逆算して設計します。",
+    icon: "/file.svg",
+  },
+  {
+    step: "STEP 02",
+    title: "ELTiS準備と模擬演習",
+    body: "対策教材や模擬テストでListening・Readingを仕上げ、講座の成果を最大化します。",
+    icon: "/window.svg",
+  },
+  {
+    step: "STEP 03",
+    title: "受験＆スコア提出",
+    body: "希望日時で受験を手配し、スコア提出や留学手続きをアユサが伴走します。",
+    icon: "/globe.svg",
+  },
+];
+
 const listeningParts = [
   "Part 1: Teacher’s directions",
   "Part 2: Mathematical language",
@@ -15,195 +131,244 @@ const readingParts = [
   "Part 3: Texts from different content areas (language arts, science, social studies)",
 ];
 
-const currentYear = new Date().getFullYear();
-const years = Array.from({ length: 30 }, (_, idx) => currentYear - idx);
-const months = Array.from({ length: 12 }, (_, idx) => idx + 1);
-const days = Array.from({ length: 31 }, (_, idx) => idx + 1);
-
-const journeySteps = [
-  {
-    step: "STEP 01",
-    title: "カウンセリング＆目標設定",
-    body: "現在の英語力や志望プランをヒアリングし、目標スコアと学習計画を明確化します。",
-    icon: "/file.svg",
-  },
-  {
-    step: "STEP 02",
-    title: "ELTiS準備と模擬演習",
-    body: "単語帳・対策講座・マンツーマンレッスンを組み合わせて、出題形式に沿った演習を実施。",
-    icon: "/window.svg",
-  },
-  {
-    step: "STEP 03",
-    title: "オンラインもしくは会場で受験",
-    body: "希望日時に合わせて個別にスケジュールを調整し、アユサが受験をサポートします。",
-    icon: "/globe.svg",
-  },
-];
-
-const sampleImages = [
-  {
-    src: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1000&q=80",
-    title: "リスニング指示のサンプル",
-    caption: "教室での指示や数学的な説明を聞き取り、指示どおりに行動できるかを確認します。",
-    tag: "Listening Example",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1000&q=80",
-    title: "リーディング教材イメージ",
-    caption: "科学・社会・言語芸術など複数教科の文章から要点を読み取る問題が出題されます。",
-    tag: "Reading Passage",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1000&q=80",
-    title: "オンライン受験の様子",
-    caption: "自宅や学校の静かな環境で、アユサが接続テストから当日サポートまで行います。",
-    tag: "Online Testing",
-  },
-];
-
 export default function Home() {
   return (
-    <div className="space-y-16 pb-16">
-      <section className="bg-gradient-to-b from-emerald-50 via-white to-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 pb-16 pt-12 lg:grid-cols-[1.3fr,0.7fr]">
-          <div className="space-y-6">
-            <nav className="text-sm text-emerald-800">
-              <Link href="/" className="underline-offset-4 hover:underline">
-                TOP
-              </Link>{" "}
-              &gt; ELTiS
-            </nav>
-            <div className="space-y-4">
-              <p className="text-sm font-semibold uppercase tracking-[0.4em] text-emerald-700">
-                ELTiS
+    <div className="space-y-20 pb-20">
+      <section className="bg-gradient-to-br from-sky-50 via-white to-emerald-50">
+        <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6 pb-16 pt-16 lg:flex-row">
+          <div className="flex-1 space-y-6">
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-sky-500">
+                3DAYS ELTIS BOOTCAMP
               </p>
               <h1 className="text-4xl font-semibold leading-tight text-zinc-900 md:text-5xl">
-                アメリカ高校留学に必要な英語力を証明する ELTiS 受験ガイド
+                3日間で攻略！ELTiS 集中講座
               </h1>
-              <p className="text-lg leading-relaxed text-zinc-600">
-                アユサ高校交換留学に参加するには、授業理解に必要なリスニング力と
-                読解力を測る ELTiS（English Language Test for International
-                Students）のスコアが必要です。試験概要、対策、受験申込までを
-                1ページにまとめました。
+              <p className="text-lg text-zinc-600">
+                ～アメリカ留学を目指す中高生のために～。授業はすべて英語で行われ、経験豊富な外国人講師が担当。
+                Listening と Reading の徹底トレーニングで、ELTiSとその先の英語試験へ確かな自信をつけます。
               </p>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="grid gap-4 text-sm text-zinc-600 md:grid-cols-3">
+              {heroBadges.map((badge) => (
+                <div
+                  key={badge}
+                  className="rounded-2xl border border-white/70 bg-white/80 px-4 py-3 text-center shadow-sm shadow-sky-100 backdrop-blur"
+                >
+                  {badge}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4">
               <Link
                 href="#contact"
-                className="rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+                className="rounded-full bg-emerald-600 px-8 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
               >
-                無料相談・お問合せ
+                エントリーする
               </Link>
               <Link
-                href="#application"
-                className="rounded-full border border-emerald-200 px-6 py-3 text-sm font-semibold text-emerald-700 transition hover:border-emerald-600 hover:text-emerald-900"
+                href="#details"
+                className="rounded-full border border-emerald-200 px-8 py-3 text-sm font-semibold text-emerald-700 transition hover:border-emerald-500 hover:text-emerald-900"
               >
-                受験概要を見る
+                開催概要を見る
               </Link>
             </div>
           </div>
-          <div className="space-y-6">
-            <div className="relative overflow-hidden rounded-3xl border border-white/40 bg-emerald-900/80 shadow-2xl shadow-emerald-200">
+          <div className="flex-1">
+            <div className="relative overflow-hidden rounded-3xl bg-zinc-900/80 shadow-2xl shadow-sky-200">
               <Image
-                src="/hero-eltis.svg"
-                alt="ELTiSを学ぶ生徒のイメージ"
-                width={640}
-                height={480}
+                src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&w=1400&q=80"
+                alt="ELTiS集中講座の学習イメージ"
+                width={900}
+                height={620}
+                className="h-full w-full object-cover opacity-80"
                 priority
-                className="h-72 w-full object-cover opacity-80"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-emerald-900 via-emerald-800/60 to-sky-900/40" />
-              <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                <p className="text-xs uppercase tracking-[0.4em] text-white/70">
-                  Essential Skills
+              <div className="absolute inset-0 bg-gradient-to-tr from-zinc-900 via-emerald-900/60 to-sky-900/50" />
+              <div className="absolute inset-x-0 bottom-0 space-y-2 px-6 py-6 text-white">
+                <p className="text-xs uppercase tracking-[0.5em] text-white/70">
+                  LISTENING + READING
                 </p>
-                <p className="text-2xl font-semibold">Listening & Reading</p>
-                <p className="mt-2 text-sm text-white/80">
-                  アメリカの授業を理解するための英語運用力を総合的に測定
+                <p className="text-2xl font-semibold">All English Intensive Training</p>
+                <p className="text-sm text-white/80">
+                  2026年8月17日〜19日 / 国立オリンピック記念青少年総合センター
                 </p>
               </div>
-            </div>
-            <div className="rounded-2xl border border-white/60 bg-white/80 p-6 shadow-lg shadow-emerald-100 backdrop-blur">
-              <dl className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl bg-emerald-50 p-4">
-                  <dt className="text-xs text-emerald-700">試験時間</dt>
-                  <dd className="text-2xl font-semibold text-emerald-900">
-                    80分
-                  </dd>
-                </div>
-                <div className="rounded-xl bg-emerald-50 p-4">
-                  <dt className="text-xs text-emerald-700">リスニング</dt>
-                  <dd className="text-xl font-semibold text-emerald-900">
-                    約30問
-                  </dd>
-                </div>
-                <div className="rounded-xl bg-emerald-50 p-4">
-                  <dt className="text-xs text-emerald-700">リーディング</dt>
-                  <dd className="text-xl font-semibold text-emerald-900">
-                    約30問
-                  </dd>
-                </div>
-              </dl>
-              <p className="mt-4 text-sm text-zinc-600">
-                対象：9〜12年生（日本の中学3年〜高校3年）で交換留学を希望する方
-              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="overview">
+      <section id="about">
         <div className="mx-auto max-w-6xl space-y-6 px-6">
-          <p className="text-sm font-semibold text-emerald-700">ELTiSとは</p>
-          <div className="grid gap-8 rounded-3xl border border-zinc-100 bg-white/90 p-8 shadow-sm shadow-zinc-100 lg:grid-cols-[1.1fr,0.9fr]">
-            <div>
+          <div className="grid gap-10 rounded-3xl border border-zinc-100 bg-white/90 p-8 shadow-sm shadow-sky-50 lg:grid-cols-[1.1fr,0.9fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-emerald-600">講座について</p>
+              <h2 className="text-3xl font-semibold text-zinc-900">英語で学ぶ3日間が、留学への第一歩</h2>
               <p className="text-lg leading-relaxed text-zinc-700">
-                ELTiS（English Language Test for International Students）は、
-                アメリカの高校で授業を受けるための「リスニング力」と「読解力」を
-                測る英語力試験です。CSIET（The Council on Standards for
-                International Educational Travel）が交換留学参加条件として採用し、
-                アメリカ国務省認可プログラムの英語力判定として利用されています。
+                ELTiS 集中講座は、アメリカ高校留学を目指す中高生向けの特別プログラムです。
+                ELTiS（English Language Test for International Students）を徹底的に理解し、
+                Listening・Reading 能力を実践的に鍛えることで、アメリカの教室で英語で授業を受けるための基礎力を築きます。
               </p>
-              <p className="mt-4 text-lg leading-relaxed text-zinc-700">
-                テストでは、アメリカの教室で行われる授業理解度を評価するため、
-                9年生〜12年生（日本の中学3年生〜高校3年生に相当）を対象に設計されています。
+              <p className="text-lg leading-relaxed text-zinc-700">
+                将来的に TOEFL などの英語試験にも応用できるスキルが身につくよう、3日間を通じて「聞く力」「読む力」の両面からアプローチ。
+                英語で学ぶ集中プログラムが、留学の第一関門突破を力強くサポートします。
               </p>
-              <ul className="mt-6 grid gap-3 text-sm text-zinc-700 sm:grid-cols-2">
-                <li className="flex items-start gap-2 rounded-2xl bg-emerald-50/70 p-3">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <span>授業中の指示や数学表現を聞き取れるかをチェック</span>
+            </div>
+            <div className="rounded-3xl bg-gradient-to-br from-white to-sky-50 p-6">
+              <p className="text-sm font-semibold text-sky-600">特長ハイライト</p>
+              <ul className="mt-4 space-y-3 text-sm text-zinc-700">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  経験豊富な外国人講師が少人数制で指導
                 </li>
-                <li className="flex items-start gap-2 rounded-2xl bg-emerald-50/70 p-3">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <span>教科横断のリーディング課題で読解スキルを測定</span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  ELTiSを通じてListening・Readingを徹底強化
                 </li>
-                <li className="flex items-start gap-2 rounded-2xl bg-emerald-50/70 p-3 sm:col-span-2">
-                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
-                  <span>CSIET認定プログラムの英語基準として正式採用</span>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  本番さながらの模擬試験と個別フィードバック
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-500" />
+                  TOEFLなど次の英語試験にも応用できる学習設計
                 </li>
               </ul>
             </div>
-            <div className="relative overflow-hidden rounded-3xl bg-amber-50">
-              <Image
-                src="/study-session.svg"
-                alt="ELTiS対策のイラスト"
-                width={600}
-                height={480}
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-white/90 p-4 shadow-lg shadow-amber-100">
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-500">
-                  INSIDE THE CLASSROOM
+          </div>
+        </div>
+      </section>
+
+      <section id="details">
+        <div className="mx-auto max-w-6xl space-y-8 px-6">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-emerald-600">開催概要</p>
+            <h2 className="text-3xl font-semibold text-zinc-900">日程・会場・料金</h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {logistics.map((item) => (
+              <div
+                key={item.label}
+                className="rounded-3xl border border-zinc-100 bg-white p-6 shadow-sm shadow-zinc-50"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-400">
+                  {item.label}
                 </p>
-                <p className="text-lg font-semibold text-zinc-900">
-                  授業理解度を可視化するためのテスト
-                </p>
-                <p className="mt-1 text-sm text-zinc-600">
-                  Listening + Reading の2技能で、実際の教科学習を想定した問題を出題
-                </p>
+                <p className="mt-2 text-xl font-semibold text-zinc-900">{item.value}</p>
+                <p className="mt-1 text-sm text-zinc-600">{item.detail}</p>
               </div>
+            ))}
+          </div>
+          <div className="rounded-3xl border border-sky-100 bg-sky-50/80 p-6 text-sm text-sky-900">
+            <p>
+              募集人数は35名（先着順）。2027年アユサ高校交換留学の登録者には割引料金をご用意しています。
+              詳細はエントリーフォームからお問い合わせください。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="eltis">
+        <div className="mx-auto max-w-6xl space-y-6 px-6">
+          <div className="grid gap-8 rounded-3xl border border-zinc-100 bg-white/90 p-8 shadow-sm shadow-sky-50 lg:grid-cols-[1.2fr,0.8fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-sky-600">ELTiSとは？</p>
+              <h2 className="text-3xl font-semibold text-zinc-900">
+                アメリカ高校留学の第一関門
+              </h2>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                ELTiS（English Language Test for International Students）は、アメリカの高校に留学する際に必要とされる英語力を測定する公式テストです。
+                Listening（聞く力）と Reading（読む力）を通じて、英語で授業を理解し学業を進める力があるかを判定します。
+                高校留学で ELTiS が求められるのは、大学留学で TOEFL が求められるのと同じ理由で、受け入れ先が安心して留学生を迎え入れるための基準となっています。
+              </p>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                スコアは受け入れ校が学習適応度を判断する重要な指標です。つまり ELTiS 対策は、アメリカ高校留学準備の第一歩。
+                早期にテストの特性を理解し、Listening・Reading を強化することが合格への近道になります。
+              </p>
             </div>
+            <div className="rounded-3xl bg-gradient-to-br from-emerald-50 to-sky-50 p-6">
+              <p className="text-sm font-semibold text-emerald-600">チェックポイント</p>
+              <ul className="mt-4 space-y-3 text-sm text-zinc-700">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  Listening・Readingの2技能で構成され、授業理解度を測定
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  アメリカの教室での授業指示や学術用語をどれだけ理解できるかを評価
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  スコアは留学先の学校が受け入れ判断を行う際の重要な基準
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mission">
+        <div className="mx-auto max-w-6xl space-y-8 px-6">
+          <div className="grid gap-10 rounded-3xl border border-zinc-100 bg-white p-8 shadow-lg shadow-emerald-50 lg:grid-cols-[1.2fr,0.8fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-emerald-600">講座の目的</p>
+              <h2 className="text-3xl font-semibold text-zinc-900">
+                Listening と Reading を集中的に鍛え、公式テストに備える
+              </h2>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                本講座では、ELTiSの出題形式と攻略法をしっかり理解し、Listening（聞く力）と Reading（読む力）の両方を実践的に強化します。
+                本番さながらの模擬トレーニングを通じて自信と試験対応力を養い、公式テストに臨む万全の準備を整えます。
+              </p>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                授業はすべて英語で実施され、外国人講師による指導のもとで学ぶため、実際の留学生活に近い環境を体感できます。
+                ELTiS攻略を軸に、将来 TOEFL などの試験にも応用できる学習姿勢を確立します。
+              </p>
+            </div>
+            <div className="rounded-3xl border border-emerald-100 bg-emerald-50/80 p-6">
+              <p className="text-sm font-semibold text-emerald-700">3日間で身につく力</p>
+              <ul className="mt-4 space-y-3 text-sm text-emerald-900">
+                {skillHighlights.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule-plan">
+        <div className="mx-auto max-w-6xl space-y-8 px-6">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold text-sky-600">スケジュール例</p>
+            <h2 className="text-3xl font-semibold text-zinc-900">
+              Day 1〜3のカリキュラム（変更となることがあります）
+            </h2>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {schedulePlan.map((day) => (
+              <article
+                key={day.day}
+                className="flex h-full flex-col rounded-3xl border border-sky-100 bg-white p-6 shadow-sm shadow-sky-50"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.4em] text-sky-500">
+                  {day.day}
+                </p>
+                <h3 className="mt-2 text-xl font-semibold text-zinc-900">{day.title}</h3>
+                <p className="mt-2 text-sm text-zinc-600">{day.description}</p>
+                <ul className="mt-4 space-y-2 text-sm text-zinc-700">
+                  {day.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-sky-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -606,6 +771,44 @@ export default function Home() {
             <p className="mt-2">
               調整した日時で個別に試験をご案内します。詳細はお問い合わせください。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="intrax">
+        <div className="mx-auto max-w-6xl space-y-6 px-6">
+          <div className="grid gap-8 rounded-3xl border border-zinc-100 bg-white p-8 shadow-lg shadow-emerald-50 lg:grid-cols-[1.2fr,0.8fr]">
+            <div className="space-y-4">
+              <p className="text-sm font-semibold text-emerald-600">イントラックスについて</p>
+              <h2 className="text-3xl font-semibold text-zinc-900">
+                1980年設立の国際教育交流団体
+              </h2>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                イントラックスは1980年に米国で設立された国際教育交流団体です。米国国務省認可の
+                J-1ビザ公式スポンサーとして、日本だけでなく世界中の高校生や大学生に向けて留学・交流プログラムを提供しています。
+              </p>
+              <p className="text-lg leading-relaxed text-zinc-700">
+                高校生向けプログラムはイントラックスの部門のひとつであるアユサインターナショナルが運営。
+                アメリカ高校交換留学を目指す生徒のサポートに長年の実績を持ち、ELTiS対策から渡航後のフォローまで伴走します。
+              </p>
+            </div>
+            <div className="rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6">
+              <p className="text-sm font-semibold text-emerald-700">サポートの強み</p>
+              <ul className="mt-4 space-y-3 text-sm text-emerald-900">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  米国国務省認可のJ-1ビザ公式スポンサー
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  世界中の学生を対象にした豊富な交流プログラム
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                  アユサインターナショナルによる高校生サポート実績
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
