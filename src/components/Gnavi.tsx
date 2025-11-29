@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const links = [
-  { href: "#overview", label: "ELTiSとは" },
-  { href: "#exam-outline", label: "試験内容" },
-  { href: "#preparation", label: "対策" },
-  { href: "#course", label: "ELTiSコース" },
-  { href: "#application", label: "受験申込" },
-];
+const links: { href: string; label: string }[] = [];
 
 export function Gnavi() {
   return (
