@@ -37,7 +37,7 @@ const scheduleDays = [
 
 export default function Home() {
   return (
-    <div className="space-y-24 bg-slate-50 pb-24">
+    <div className="space-y-16 bg-slate-50 pb-16 md:space-y-24 md:pb-24">
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <Image
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
@@ -47,14 +47,14 @@ export default function Home() {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent" />
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 pb-20 pt-24 lg:flex-row lg:items-start">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 lg:flex-row lg:items-start lg:pb-20 lg:pt-24">
           <div className="flex-1 space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white/85">
               3DAYS ELTIS BOOTCAMP
             </span>
             <div className="space-y-4 text-lg leading-relaxed text-white/85">
               <div className="space-y-3">
-                <h1 className="text-4xl font-semibold leading-tight tracking-wide text-white md:text-5xl whitespace-nowrap">
+                <h1 className="text-3xl font-semibold leading-tight tracking-wide text-white whitespace-normal sm:text-4xl md:text-5xl md:whitespace-nowrap">
                   3日間で攻略！ELTiS 集中講座
                 </h1>
                 <p className="text-lg text-white/85">～アメリカ留学を目指す中高生のために～</p>
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex-1" id="application">
-            <div className="rounded-3xl bg-white/90 p-6 text-slate-900 shadow-xl backdrop-blur">
+            <div className="rounded-3xl bg-white/90 p-6 text-slate-900 shadow-xl backdrop-blur md:p-8">
               <ul className="space-y-4 text-sm">
                 {heroDetails.map((detail) => (
                   <li key={detail.label} className="flex flex-col gap-0.5 leading-relaxed">
@@ -85,9 +85,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="overview" className="px-6">
+      <section id="overview" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl border border-white bg-white/95 p-8 shadow-sm shadow-slate-100">
+          <div className="rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
             <h2 className="text-2xl font-semibold text-slate-900">ELTiSとは？</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-700">
               ELTiS（English Language Test for International Students）は、アメリカ高校留学で必要とされる英語力を測定するテストです。大学留学で TOEFL が求められるのと同じように、高校留学では ELTiS がその役割を担っています。
@@ -99,9 +99,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="preparation" className="px-6">
+      <section id="preparation" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl border border-white bg-white/95 p-8 shadow-sm shadow-slate-100">
+          <div className="rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
             <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-700">
               本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させます。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
@@ -113,8 +113,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="course" className="px-6">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-emerald-100 bg-emerald-50/80 p-8">
+      <section id="course" className="px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl rounded-3xl border border-emerald-100 bg-emerald-50/80 p-6 md:p-8">
           <h2 className="text-2xl font-semibold text-emerald-900">3日間で身につく力</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {strengths.map((item) => (
@@ -126,27 +126,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="exam-outline" className="px-6">
+      <section id="exam-outline" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-slate-100 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-xl">
-          <div className="bg-white/5 px-8 py-10">
+          <div className="bg-white/5 px-6 py-8 md:px-8 md:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">EXAM OUTLINE</p>
             <h2 className="mt-2 text-3xl font-semibold">試験内容（スケジュール例 / 変更となることがあります）</h2>
             <p className="mt-3 text-sm text-slate-200">
               3日間の集中講座で、Listening と Reading の両方を段階的に鍛える実戦プログラム。各日ごとのテーマと演習項目はこちらです。
             </p>
           </div>
-          <div className="space-y-0 px-8 pb-8 pt-4">
+          <div className="space-y-0 px-4 pb-6 pt-4 sm:px-6 md:px-8 md:pb-8">
             {scheduleDays.map((day, index) => (
-              <div key={day.day} className="relative flex gap-6 py-8 last:pb-0">
-                <div className="flex flex-col items-center">
+              <div key={day.day} className="relative flex flex-col gap-4 py-8 last:pb-0 sm:flex-row sm:gap-6">
+                <div className="flex flex-col items-center sm:items-center">
                   <div className="grid h-14 w-20 place-items-center rounded-full border border-white/40 bg-white/10 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-white whitespace-nowrap">
                     {day.day}
                   </div>
                   {index < scheduleDays.length - 1 && (
-                    <span className="mt-2 h-full w-px bg-white/30" aria-hidden="true" />
+                    <span className="mt-2 hidden h-full w-px bg-white/30 sm:block" aria-hidden="true" />
                   )}
                 </div>
-                <div className="flex-1 rounded-3xl border border-white/15 bg-white/5 p-6 shadow-inner">
+                <div className="flex-1 rounded-3xl border border-white/15 bg-white/5 p-5 shadow-inner md:p-6">
                   <h3 className="text-xl font-semibold text-white">{day.title}</h3>
                   <ul className="mt-4 space-y-2 text-sm text-slate-100">
                     {day.bullets.map((bullet) => (
@@ -175,7 +175,7 @@ export default function Home() {
           speed={0.5}
         />
         <div className="absolute inset-0 bg-slate-900/70" aria-hidden="true" />
-        <div className="relative mx-auto flex max-w-4xl flex-col gap-4 px-6 py-24 text-center text-white">
+        <div className="relative mx-auto flex max-w-4xl flex-col gap-4 px-4 py-20 text-center text-white sm:px-6 md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/70">INTRAX</p>
           <h2 className="text-3xl font-semibold">イントラックスについて</h2>
           <p className="text-lg leading-relaxed text-white/90">
@@ -185,8 +185,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="px-6">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-white bg-white/95 p-8 shadow-sm shadow-slate-100">
+      <section id="contact" className="px-4 sm:px-6">
+        <div className="mx-auto max-w-6xl rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold text-slate-900">お問い合わせ</h2>
