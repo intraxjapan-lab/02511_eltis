@@ -197,8 +197,8 @@ export default function Home() {
             <iframe
               src="https://forms.intraxjp.com/?service=ELTiS"
               width="100%"
-              height="850"
-              style={{ minHeight: "850px", border: "none" }}
+              height="1400"
+              style={{ minHeight: "1400px", border: "none" }}
               frameBorder="0"
               title="ELTiS お問い合わせフォーム"
               allow="clipboard-write"
