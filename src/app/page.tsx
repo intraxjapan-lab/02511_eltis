@@ -3,10 +3,11 @@ import { SlowVideo } from "@/components/SlowVideo";
 
 const heroDetails = [
   { label: "日程", value: "2026年8月17日（月）～8月19日（水） 3日間" },
+  { label: "時間", value: "9:00〜16:00（通い講習）" },
   { label: "対象", value: "中高生" },
   { label: "会場", value: "国立オリンピック記念青少年総合センター（渋谷）" },
   { label: "募集人数", value: "35名（先着順）" },
-  { label: "受講料金", value: "35,000円（税別）" },
+  { label: "受講料金", value: "38,500円（税込）" },
   { label: "特典", value: "2027年アユサ高校交換留学の登録者は割引あり" },
 ];
 
@@ -104,7 +105,7 @@ export default function Home() {
           <div className="rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
             <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
             <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させます。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
+              本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させることを目的としています。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
             </p>
             <p className="mt-4 text-lg leading-relaxed text-slate-700">
               授業はすべて英語で実施され、外国人講師による指導を受けながら、実際の留学生活に近い環境で学ぶことができます。
@@ -129,8 +130,8 @@ export default function Home() {
       <section id="exam-outline" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-slate-100 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-xl">
           <div className="bg-white/5 px-6 py-8 md:px-8 md:py-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">EXAM OUTLINE</p>
-            <h2 className="mt-2 text-3xl font-semibold">試験内容（スケジュール例 / 変更となることがあります）</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">COURSE CONTENTS</p>
+            <h2 className="mt-2 text-3xl font-semibold">講座内容（スケジュール例 / 変更となることがあります）</h2>
             <p className="mt-3 text-sm text-slate-200">
               3日間の集中講座で、Listening と Reading の両方を段階的に鍛える実戦プログラム。各日ごとのテーマと演習項目はこちらです。
             </p>
@@ -180,7 +181,7 @@ export default function Home() {
           <h2 className="text-3xl font-semibold">イントラックスについて</h2>
           <p className="text-lg leading-relaxed text-white/90">
             イントラックスは1980年に米国で設立された国際教育交流団体です。米国国務省認可のJ-1ビザ公式スポンサーとして、日本だけでなく世界中の高校生・大学生向けに
-            留学・交流プログラムを提供。高校生向けプログラムはイントラックスの部門であるアユサインターナショナルが運営しています。
+            留学・交流プログラムを提供。高校生向けプログラムはイントラックスの部門の一つであるアユサインターナショナルが運営しています。
           </p>
         </div>
       </section>
