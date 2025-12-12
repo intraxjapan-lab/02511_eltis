@@ -100,53 +100,57 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="overview" className="px-4 sm:px-6">
+      <section className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10">
-            <div className="overflow-hidden rounded-3xl">
-              <Image
-                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
-                alt="キャンパスで学ぶ学生たち"
-                width={1600}
-                height={1066}
-                className="h-72 w-full rounded-2xl object-cover"
-                priority
-              />
-            </div>
-            <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
-              <h2 className="text-2xl font-semibold text-slate-900">ELTiSとは？</h2>
-              <p>
-                ELTiS（English Language Test for International Students）は、アメリカ高校留学で必要とされる英語力を測定するテストです。大学留学で TOEFL が求められるのと同じように、高校留学では ELTiS がその役割を担っています。
-              </p>
-              <p>
-                このテストでは、Listening（聞く力）と Reading（読む力）が試されます。スコアは、受け入れ先の学校が「英語で授業を理解し、学業を行う力があるか」を判断するための重要な基準となります。そのため、ELTiS対策はアメリカ高校留学準備の第一歩として欠かせません。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div className="grid gap-8 md:grid-cols-2">
+            <article
+              id="overview"
+              className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
+            >
+              <div className="overflow-hidden rounded-3xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
+                  alt="キャンパスで学ぶ学生たち"
+                  width={1600}
+                  height={1066}
+                  className="h-72 w-full rounded-2xl object-cover"
+                  priority
+                />
+              </div>
+              <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
+                <h2 className="text-2xl font-semibold text-slate-900">ELTiSとは？</h2>
+                <p>
+                  ELTiS（English Language Test for International Students）は、アメリカ高校留学で必要とされる英語力を測定するテストです。大学留学で TOEFL が求められるのと同じように、高校留学では ELTiS がその役割を担っています。
+                </p>
+                <p>
+                  このテストでは、Listening（聞く力）と Reading（読む力）が試されます。スコアは、受け入れ先の学校が「英語で授業を理解し、学業を行う力があるか」を判断するための重要な基準となります。そのため、ELTiS対策はアメリカ高校留学準備の第一歩として欠かせません。
+                </p>
+              </div>
+            </article>
 
-      <section id="preparation" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10">
-            <div className="overflow-hidden rounded-3xl">
-              <Image
-                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80"
-                alt="授業を行う講師"
-                width={1600}
-                height={1066}
-                className="h-72 w-full rounded-2xl object-cover"
-              />
-            </div>
-            <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
-              <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
-              <p>
-                本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させることを目的としています。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
-              </p>
-              <p>
-                授業はすべて英語で実施され、外国人講師による指導を受けながら、実際の留学生活に近い環境で学ぶことができます。
-              </p>
-            </div>
+            <article
+              id="preparation"
+              className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
+            >
+              <div className="overflow-hidden rounded-3xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+                  alt="外国人講師の指導で学ぶ高校生"
+                  width={1600}
+                  height={1066}
+                  className="h-72 w-full rounded-2xl object-cover"
+                />
+              </div>
+              <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
+                <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
+                <p>
+                  本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させることを目的としています。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
+                </p>
+                <p>
+                  授業はすべて英語で実施され、外国人講師による指導を受けながら、実際の留学生活に近い環境で学ぶことができます。
+                </p>
+              </div>
+            </article>
           </div>
         </div>
       </section>
