@@ -3,12 +3,12 @@ import { SlowVideo } from "@/components/SlowVideo";
 
 const heroDetails = [
   { label: "日程", value: "2026年8月17日（月）～8月19日（水） 3日間" },
-  { label: "時間", value: "9:00〜16:00（通い講習）" },
+  { label: "時間", value: "9:00〜16:00" },
   { label: "対象", value: "中高生" },
   { label: "会場", value: "国立オリンピック記念青少年総合センター（渋谷）" },
   { label: "募集人数", value: "35名（先着順）" },
   { label: "受講料金", value: "38,500円（税込）" },
-  { label: "特典", value: "2027年アユサ高校交換留学の登録者は割引あり" },
+  { label: "※", value: "2027年アユサ高校交換留学の登録者は割引あり" },
 ];
 
 const strengths = [
@@ -38,8 +38,8 @@ const scheduleDays = [
 
 export default function Home() {
   return (
-    <div className="space-y-16 bg-slate-50 pb-16 md:space-y-24 md:pb-24">
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+    <div className="space-y-16 bg-sky-50 pb-16 md:space-y-24 md:pb-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-cyan-500 to-sky-400 text-white">
         <Image
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
           alt="集中して勉強する高校生たち"
@@ -47,28 +47,36 @@ export default function Home() {
           className="object-cover object-center opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/40 via-cyan-700/30 to-white/10" />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 lg:flex-row lg:items-start lg:pb-20 lg:pt-24">
           <div className="flex-1 space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white/85">
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white/90">
               3DAYS ELTIS BOOTCAMP
             </span>
-            <div className="space-y-4 text-lg leading-relaxed text-white/85">
+            <div className="space-y-4 text-lg leading-relaxed text-white/90">
               <div className="space-y-3">
                 <h1 className="text-3xl font-semibold leading-tight tracking-wide text-white whitespace-normal sm:text-4xl md:text-5xl md:whitespace-nowrap">
                   3日間で攻略！ELTiS 集中講座
                 </h1>
                 <p className="text-lg text-white/85">～アメリカ留学を目指す中高生のために～</p>
               </div>
-            <div className="space-y-4">
+              <div className="space-y-4">
                 <p>
                   ELTiS 集中講座は、アメリカ高校留学を目指す中高生のための特別プログラムです。授業はすべて英語で行われ、経験豊富な外国人講師が担当します。
                   この講座では、留学の第一関門である ELTiS（English Language Test for International Students）を徹底的に理解し、実践的に対策します。
                 </p>
                 <p>
                   ELTiSを通して「聞く」「読む」力を強化し、将来的に TOEFL などの英語試験にも応用できるスキルを身につけます。英語で学ぶ3日間が、留学への第一歩となります。
-              </p>
-            </div>
+                </p>
+              </div>
+              <div className="pt-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-sky-900 shadow-lg shadow-sky-900/20 transition hover:bg-white hover:text-sky-900"
+                >
+                  お問い合わせはこちら
+                </a>
+              </div>
             </div>
           </div>
           <div className="flex-1" id="application">
@@ -77,7 +85,13 @@ export default function Home() {
                 {heroDetails.map((detail) => (
                   <li key={detail.label} className="flex flex-col gap-0.5 leading-relaxed">
                     <span className="text-xs uppercase tracking-[0.3em] text-slate-500">{detail.label}</span>
-                    <span className="text-base font-semibold text-slate-900">{detail.value}</span>
+                    <span
+                      className={`font-semibold text-slate-900 ${
+                        detail.label === "※" ? "text-sm whitespace-nowrap" : "text-base"
+                      }`}
+                    >
+                      {detail.value}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -88,71 +102,94 @@ export default function Home() {
 
       <section id="overview" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">ELTiSとは？</h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              ELTiS（English Language Test for International Students）は、アメリカ高校留学で必要とされる英語力を測定するテストです。大学留学で TOEFL が求められるのと同じように、高校留学では ELTiS がその役割を担っています。
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              このテストでは、Listening（聞く力）と Reading（読む力）が試されます。スコアは、受け入れ先の学校が「英語で授業を理解し、学業を行う力があるか」を判断するための重要な基準となります。そのため、ELTiS対策はアメリカ高校留学準備の第一歩として欠かせません。
-            </p>
+          <div className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10">
+            <div className="overflow-hidden rounded-3xl">
+              <Image
+                src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
+                alt="キャンパスで学ぶ学生たち"
+                width={1600}
+                height={1066}
+                className="h-72 w-full rounded-2xl object-cover"
+                priority
+              />
+            </div>
+            <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
+              <h2 className="text-2xl font-semibold text-slate-900">ELTiSとは？</h2>
+              <p>
+                ELTiS（English Language Test for International Students）は、アメリカ高校留学で必要とされる英語力を測定するテストです。大学留学で TOEFL が求められるのと同じように、高校留学では ELTiS がその役割を担っています。
+              </p>
+              <p>
+                このテストでは、Listening（聞く力）と Reading（読む力）が試されます。スコアは、受け入れ先の学校が「英語で授業を理解し、学業を行う力があるか」を判断するための重要な基準となります。そのため、ELTiS対策はアメリカ高校留学準備の第一歩として欠かせません。
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="preparation" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl">
-          <div className="rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
-            <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
-            <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させることを目的としています。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
-            </p>
-            <p className="mt-4 text-lg leading-relaxed text-slate-700">
-              授業はすべて英語で実施され、外国人講師による指導を受けながら、実際の留学生活に近い環境で学ぶことができます。
-            </p>
+          <div className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10">
+            <div className="overflow-hidden rounded-3xl">
+              <Image
+                src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80"
+                alt="授業を行う講師"
+                width={1600}
+                height={1066}
+                className="h-72 w-full rounded-2xl object-cover"
+              />
+            </div>
+            <div className="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
+              <h2 className="text-2xl font-semibold text-slate-900">講座の目的（対策）</h2>
+              <p>
+                本講座では、ELTiSの出題形式と攻略法をしっかりと理解し、Listening（聞く力）と Reading（読む力）のスキルを確実に向上させることを目的としています。さらに、本番さながらの実戦トレーニングを通して、自信と試験対応力を養い、公式テストに臨むための万全の準備を整えます。
+              </p>
+              <p>
+                授業はすべて英語で実施され、外国人講師による指導を受けながら、実際の留学生活に近い環境で学ぶことができます。
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="course" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl rounded-3xl border border-emerald-100 bg-emerald-50/80 p-6 md:p-8">
-          <h2 className="text-2xl font-semibold text-emerald-900">3日間で身につく力</h2>
+        <div className="mx-auto max-w-6xl rounded-[32px] border border-sky-100 bg-sky-100/80 p-6 md:p-8">
+          <h2 className="text-2xl font-semibold text-sky-900">3日間で身につく力</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {strengths.map((item) => (
-              <div key={item} className="rounded-2xl border border-white bg-white/80 p-4 text-emerald-900">
+              <div key={item} className="rounded-2xl border border-white bg-white/90 p-4 text-sky-900 shadow-sm shadow-sky-200/60">
                 {item}
-          </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       <section id="exam-outline" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-slate-100 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white shadow-xl">
-          <div className="bg-white/5 px-6 py-8 md:px-8 md:py-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-300">COURSE CONTENTS</p>
-            <h2 className="mt-2 text-3xl font-semibold">講座内容（スケジュール例 / 変更となることがあります）</h2>
-            <p className="mt-3 text-sm text-slate-200">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-white shadow-xl shadow-sky-200/60">
+          <div className="bg-white/10 px-6 py-8 md:px-8 md:py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">COURSE CONTENTS</p>
+            <h2 className="mt-2 text-3xl font-semibold text-white">講座内容（スケジュール例 / 変更となることがあります）</h2>
+            <p className="mt-3 text-sm text-white/80">
               3日間の集中講座で、Listening と Reading の両方を段階的に鍛える実戦プログラム。各日ごとのテーマと演習項目はこちらです。
             </p>
           </div>
           <div className="space-y-0 px-4 pb-6 pt-4 sm:px-6 md:px-8 md:pb-8">
             {scheduleDays.map((day, index) => (
               <div key={day.day} className="relative flex flex-col gap-4 py-8 last:pb-0 sm:flex-row sm:gap-6">
-                <div className="flex flex-col items-center sm:items-center">
-                  <div className="grid h-14 w-20 place-items-center rounded-full border border-white/40 bg-white/10 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-white whitespace-nowrap">
+                <div className="flex flex-col items-center">
+                  <div className="grid h-14 w-24 place-items-center rounded-full border border-white/50 bg-white/15 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-white">
                     {day.day}
                   </div>
                   {index < scheduleDays.length - 1 && (
                     <span className="mt-2 hidden h-full w-px bg-white/30 sm:block" aria-hidden="true" />
                   )}
                 </div>
-                <div className="flex-1 rounded-3xl border border-white/15 bg-white/5 p-5 shadow-inner md:p-6">
+                <div className="flex-1 rounded-3xl border border-white/20 bg-white/10 p-5 shadow-inner md:p-6">
                   <h3 className="text-xl font-semibold text-white">{day.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-slate-100">
+                  <ul className="mt-4 space-y-2 text-sm text-white/90">
                     {day.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-200" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -175,9 +212,9 @@ export default function Home() {
           aria-hidden="true"
           speed={0.5}
         />
-        <div className="absolute inset-0 bg-slate-900/70" aria-hidden="true" />
+        <div className="absolute inset-0 bg-sky-950/65" aria-hidden="true" />
         <div className="relative mx-auto flex max-w-4xl flex-col gap-4 px-4 py-20 text-center text-white sm:px-6 md:py-24">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/70">INTRAX</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">INTRAX</p>
           <h2 className="text-3xl font-semibold">イントラックスについて</h2>
           <p className="text-lg leading-relaxed text-white/90">
             イントラックスは1980年に米国で設立された国際教育交流団体です。米国国務省認可のJ-1ビザ公式スポンサーとして、日本だけでなく世界中の高校生・大学生向けに
@@ -188,7 +225,7 @@ export default function Home() {
 
       <section id="contact" className="px-4 sm:px-6">
         <div className="mx-auto max-w-6xl rounded-3xl border border-white bg-white/95 p-6 shadow-sm shadow-slate-100 md:p-8">
-          <div className="space-y-6">
+          <div className="space-y-6 text-center">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold text-slate-900">お問い合わせ</h2>
               <p className="text-slate-700">
