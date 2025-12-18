@@ -39,7 +39,7 @@ const scheduleDays = [
 export default function Home() {
   return (
     <div className="space-y-16 bg-sky-50 pb-16 md:space-y-24 md:pb-24">
-      <section className="relative overflow-hidden bg-gradient-to-br from-sky-600 via-cyan-500 to-sky-400 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white">
         <Image
           src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80"
           alt="集中して勉強する高校生たち"
@@ -47,18 +47,18 @@ export default function Home() {
           className="object-cover object-center opacity-60"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-sky-900/40 via-cyan-700/30 to-white/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-transparent" />
         <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-16 sm:px-6 lg:flex-row lg:items-start lg:pb-20 lg:pt-24">
           <div className="flex-1 space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.4em] text-white/90">
-              3DAYS ELTIS BOOTCAMP
+            <span className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1 text-[0.65rem] font-semibold tracking-[0.4em] text-sky-700">
+              3DAYS ELTiS BOOTCAMP
             </span>
-            <div className="space-y-4 text-lg leading-relaxed text-white/90">
+            <div className="space-y-4 text-lg leading-relaxed text-white">
               <div className="space-y-3">
                 <h1 className="text-3xl font-semibold leading-tight tracking-wide text-white whitespace-normal sm:text-4xl md:text-5xl md:whitespace-nowrap">
                   3日間で攻略！ELTiS 集中講座
                 </h1>
-                <p className="text-lg text-white/85">～アメリカ留学を目指す中高生のために～</p>
+                <p className="text-lg text-white/95">～アメリカ留学を目指す中高生のために～</p>
               </div>
               <div className="space-y-4">
                 <p>
@@ -72,7 +72,7 @@ export default function Home() {
               <div className="pt-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-sky-900 shadow-lg shadow-sky-900/20 transition hover:bg-white hover:text-sky-900"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-sky-700 shadow-lg shadow-sky-600/30 transition hover:bg-slate-100"
                 >
                   お問い合わせはこちら
                 </a>
@@ -82,18 +82,19 @@ export default function Home() {
           <div className="flex-1" id="application">
             <div className="rounded-3xl bg-white/90 p-6 text-slate-900 shadow-xl backdrop-blur md:p-8">
               <ul className="space-y-4 text-sm">
-                {heroDetails.map((detail) => (
-                  <li key={detail.label} className="flex flex-col gap-0.5 leading-relaxed">
-                    <span className="text-xs uppercase tracking-[0.3em] text-slate-500">{detail.label}</span>
-                    <span
-                      className={`font-semibold text-slate-900 ${
-                        detail.label === "※" ? "text-sm whitespace-nowrap" : "text-base"
-                      }`}
-                    >
-                      {detail.value}
-                    </span>
-                  </li>
-                ))}
+                {heroDetails.map((detail) =>
+                  detail.label === "※" ? (
+                    <li key={detail.label} className="flex flex-wrap items-baseline gap-2 leading-relaxed">
+                      <span className="text-xs uppercase tracking-[0.3em] text-slate-500">{detail.label}</span>
+                      <span className="text-sm font-semibold text-slate-900">{detail.value}</span>
+                    </li>
+                  ) : (
+                    <li key={detail.label} className="flex flex-col gap-0.5 leading-relaxed">
+                      <span className="text-xs uppercase tracking-[0.3em] text-slate-500">{detail.label}</span>
+                      <span className="text-base font-semibold text-slate-900">{detail.value}</span>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
@@ -108,11 +109,12 @@ export default function Home() {
               className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
             >
               <div className="overflow-hidden rounded-3xl">
+                {/* previous: https://images.unsplash.com/photo-1503676260728-1c00da094a0b */}
                 <Image
-                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
-                  alt="キャンパスで学ぶ学生たち"
-                  width={1600}
-                  height={1066}
+                  src="/student.png"
+                  alt="試験に備えて学ぶ学生"
+                  width={2048}
+                  height={1365}
                   className="h-72 w-full rounded-2xl object-cover"
                   priority
                 />
@@ -133,11 +135,12 @@ export default function Home() {
               className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
             >
               <div className="overflow-hidden rounded-3xl">
+                {/* previous: https://images.unsplash.com/photo-1500530855697-b586d89ba3ee */}
                 <Image
-                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
-                  alt="外国人講師の指導で学ぶ高校生"
-                  width={1600}
-                  height={1066}
+                  src="/teacher.png"
+                  alt="授業を行う講師"
+                  width={2048}
+                  height={1365}
                   className="h-72 w-full rounded-2xl object-cover"
                 />
               </div>
@@ -156,7 +159,7 @@ export default function Home() {
       </section>
 
       <section id="course" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl rounded-[32px] border border-sky-100 bg-sky-100/80 p-6 md:p-8">
+        <div className="mx-auto max-w-6xl rounded-[32px] border border-sky-100 bg-sky-100/60 p-6 shadow-inner shadow-white md:p-8">
           <h2 className="text-2xl font-semibold text-sky-900">3日間で身につく力</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {strengths.map((item) => (
@@ -169,11 +172,11 @@ export default function Home() {
       </section>
 
       <section id="exam-outline" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-white shadow-xl shadow-sky-200/60">
-          <div className="bg-white/10 px-6 py-8 md:px-8 md:py-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">COURSE CONTENTS</p>
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-gradient-to-br from-sky-500 via-cyan-400 to-sky-500 text-white shadow-xl shadow-sky-200/60">
+          <div className="bg-white/15 px-6 py-8 md:px-8 md:py-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/85">COURSE CONTENTS</p>
             <h2 className="mt-2 text-3xl font-semibold text-white">講座内容（スケジュール例 / 変更となることがあります）</h2>
-            <p className="mt-3 text-sm text-white/80">
+            <p className="mt-3 text-sm text-white/90">
               3日間の集中講座で、Listening と Reading の両方を段階的に鍛える実戦プログラム。各日ごとのテーマと演習項目はこちらです。
             </p>
           </div>
@@ -181,19 +184,19 @@ export default function Home() {
             {scheduleDays.map((day, index) => (
               <div key={day.day} className="relative flex flex-col gap-4 py-8 last:pb-0 sm:flex-row sm:gap-6">
                 <div className="flex flex-col items-center">
-                  <div className="grid h-14 w-24 place-items-center rounded-full border border-white/50 bg-white/15 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-white">
+                  <div className="grid h-14 w-28 place-items-center rounded-full border border-white/70 bg-white/80 text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-sky-700">
                     {day.day}
                   </div>
                   {index < scheduleDays.length - 1 && (
-                    <span className="mt-2 hidden h-full w-px bg-white/30 sm:block" aria-hidden="true" />
+                    <span className="mt-2 hidden h-full w-px bg-white/40 sm:block" aria-hidden="true" />
                   )}
                 </div>
-                <div className="flex-1 rounded-3xl border border-white/20 bg-white/10 p-5 shadow-inner md:p-6">
-                  <h3 className="text-xl font-semibold text-white">{day.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm text-white/90">
+                <div className="flex-1 rounded-3xl border border-white/50 bg-white/90 p-5 text-slate-800 shadow-inner shadow-sky-200/40 md:p-6">
+                  <h3 className="text-xl font-semibold text-sky-800">{day.title}</h3>
+                  <ul className="mt-4 space-y-2 text-sm text-slate-700">
                     {day.bullets.map((bullet) => (
                       <li key={bullet} className="flex items-start gap-2">
-                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-amber-200" />
+                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -216,7 +219,7 @@ export default function Home() {
           aria-hidden="true"
           speed={0.5}
         />
-        <div className="absolute inset-0 bg-sky-950/65" aria-hidden="true" />
+        <div className="absolute inset-0 bg-sky-900/55 backdrop-blur-[1px]" aria-hidden="true" />
         <div className="relative mx-auto flex max-w-4xl flex-col gap-4 px-4 py-20 text-center text-white sm:px-6 md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">INTRAX</p>
           <h2 className="text-3xl font-semibold">イントラックスについて</h2>
@@ -232,7 +235,7 @@ export default function Home() {
           <div className="space-y-6 text-center">
             <div className="space-y-2">
               <h2 className="text-2xl font-semibold text-slate-900">お問い合わせ</h2>
-              <p className="text-slate-700">
+              <p className="text-center text-slate-700">
                 参加に関するご質問やお申し込みは、下記フォームよりお気軽にご連絡ください。
               </p>
             </div>
