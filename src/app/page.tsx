@@ -109,12 +109,12 @@ export default function Home() {
               className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
             >
               <div className="overflow-hidden rounded-3xl">
-                {/* previous: https://images.unsplash.com/photo-1503676260728-1c00da094a0b */}
+                {/* alt案: /student.png（保持） */}
                 <Image
-                  src="/student.png"
-                  alt="試験に備えて学ぶ学生"
-                  width={2048}
-                  height={1365}
+                  src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80"
+                  alt="キャンパスで学ぶ学生たち"
+                  width={1600}
+                  height={1066}
                   className="h-72 w-full rounded-2xl object-cover"
                   priority
                 />
@@ -135,12 +135,12 @@ export default function Home() {
               className="rounded-[32px] border border-white/60 bg-white/95 p-6 shadow-xl shadow-sky-100 md:p-10"
             >
               <div className="overflow-hidden rounded-3xl">
-                {/* previous: https://images.unsplash.com/photo-1500530855697-b586d89ba3ee */}
+                {/* alt案: /teacher.png（保持） */}
                 <Image
-                  src="/teacher.png"
-                  alt="授業を行う講師"
-                  width={2048}
-                  height={1365}
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80"
+                  alt="外国人講師の指導で学ぶ高校生"
+                  width={1600}
+                  height={1066}
                   className="h-72 w-full rounded-2xl object-cover"
                 />
               </div>
@@ -172,8 +172,8 @@ export default function Home() {
       </section>
 
       <section id="exam-outline" className="px-4 sm:px-6">
-        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-gradient-to-br from-sky-500 via-cyan-400 to-sky-500 text-white shadow-xl shadow-sky-200/60">
-          <div className="bg-white/15 px-6 py-8 md:px-8 md:py-10">
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border border-sky-100 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white shadow-xl shadow-sky-200/60">
+          <div className="bg-white/12 px-6 py-8 md:px-8 md:py-10">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/85">COURSE CONTENTS</p>
             <h2 className="mt-2 text-3xl font-semibold text-white">講座内容（スケジュール例 / 変更となることがあります）</h2>
             <p className="mt-3 text-sm text-white/90">
@@ -219,7 +219,7 @@ export default function Home() {
           aria-hidden="true"
           speed={0.5}
         />
-        <div className="absolute inset-0 bg-sky-900/55 backdrop-blur-[1px]" aria-hidden="true" />
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-[1px]" aria-hidden="true" />
         <div className="relative mx-auto flex max-w-4xl flex-col gap-4 px-4 py-20 text-center text-white sm:px-6 md:py-24">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-white/80">INTRAX</p>
           <h2 className="text-3xl font-semibold">イントラックスについて</h2>
